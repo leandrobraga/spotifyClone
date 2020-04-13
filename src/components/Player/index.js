@@ -35,7 +35,7 @@ export default function Player() {
         <Author>{currentEpisode.artist}</Author>
       </EpisodeInfo>
       <Controls>
-        <ControlButton>
+        <ControlButton onPress={() => dispatch(PlayerActions.prev())}>
           <ControlIcon name="skip-previous" />
         </ControlButton>
         <ControlButton
@@ -47,7 +47,7 @@ export default function Player() {
         >
           <ControlIcon name={player.playing ? 'pause-circle-filled' : 'play-circle-filled'} />
         </ControlButton>
-        <ControlButton>
+        <ControlButton onPress={() => dispatch(PlayerActions.next())}>
           <ControlIcon name="skip-next" />
         </ControlButton>
       </Controls>
